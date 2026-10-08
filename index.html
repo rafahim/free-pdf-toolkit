@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Free PDF tools that run entirely in your browser. Merge, split, compress, rotate, reorder, watermark and edit PDFs without uploading files.">
+<meta name="keywords" content="free pdf tools, merge pdf, split pdf, compress pdf, pdf toolkit, pdf editor online">
+<meta name="author" content="RA Fahim">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://rafahim.com/pdf-toolkit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free PDF Toolkit — Merge, Split, Compress PDF Online (No Upload) | RA Fahim">
+<meta property="og:description" content="A private, browser-only PDF toolkit for merging, splitting, compressing, rotating, numbering, watermarking and converting PDFs.">
+<meta property="og:url" content="https://rafahim.com/pdf-toolkit/">
+<meta property="og:site_name" content="RA Fahim">
+<meta property="og:image" content="https://rafahim.com/pdf-toolkit/og-image.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free PDF Toolkit — Merge, Split, Compress PDF Online (No Upload) | RA Fahim">
+<meta name="twitter:description" content="Private browser-only PDF tools. Your files never leave the device.">
+<meta name="twitter:image" content="https://rafahim.com/pdf-toolkit/og-image.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "name":"Free PDF Toolkit",
+      "url":"https://rafahim.com/pdf-toolkit/",
+      "applicationCategory":"BusinessApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requires JavaScript and a modern browser",
+      "description":"Browser-only PDF tools with local processing and no file uploads.",
+      "author":{"@id":"https://rafahim.com/#person"},
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    },
+    {
+      "@type":"Person",
+      "@id":"https://rafahim.com/#person",
+      "name":"RA Fahim",
+      "url":"https://rafahim.com",
+      "jobTitle":"Web Developer & Creator",
+      "address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},
+      "sameAs":["https://github.com/rafahim","https://twitter.com/rafahimn","https://linkedin.com/in/rafahimn"]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://rafahim.com/"},
+        {"@type":"ListItem","position":2,"name":"PDF Toolkit","item":"https://rafahim.com/pdf-toolkit/"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+<div class="brand-wrap">
+<div class="brand-mark">PDF</div>
+<div><div class="brand-title" data-i18n="brand">Free PDF Toolkit</div><div class="brand-sub" data-i18n="privacyShort">Files never leave your device</div></div>
+</div>
+<div class="top-actions">
+<button class="icon-btn" id="langBtn" type="button">বাংলা</button>
+<button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">◐</button>
+<button class="icon-btn" id="clearBtn" type="button" data-i18n="clearAll">Clear</button>
+</div>
+</header>
+<div class="privacy-strip"><span>🔒</span><span data-i18n="privacyNotice">100% browser-only processing. Nothing is uploaded.</span></div>
+<main class="main-grid">
+<aside class="sidebar">
+<div class="sidebar-title" data-i18n="tools">Tools</div>
+<div class="tool-list" id="toolList">
+<button class="tool-btn active" data-tool="merge">⇄ <span data-i18n="merge">Merge PDFs</span></button>
+<button class="tool-btn" data-tool="split">✂ <span data-i18n="split">Split PDF</span></button>
+<button class="tool-btn" data-tool="compress">◌ <span data-i18n="compress">Compress PDF</span></button>
+<button class="tool-btn" data-tool="rotate">↻ <span data-i18n="rotate">Rotate Pages</span></button>
+<button class="tool-btn" data-tool="editPages">☷ <span data-i18n="pageEditor">Page Editor</span></button>
+<button class="tool-btn" data-tool="extractImages">▧ <span data-i18n="extractImages">Extract Images</span></button>
+<button class="tool-btn" data-tool="pdfToImage">▣ <span data-i18n="pdfToImage">PDF → JPG/PNG</span></button>
+<button class="tool-btn" data-tool="imageToPdf">▤ <span data-i18n="imageToPdf">JPG/PNG → PDF</span></button>
+<button class="tool-btn" data-tool="pageNumbers"># <span data-i18n="pageNumbers">Page Numbers</span></button>
+<button class="tool-btn" data-tool="watermark">◈ <span data-i18n="watermark">Watermark</span></button>
+<button class="tool-btn" data-tool="password">⌑ <span data-i18n="password">Password</span></button>
+<button class="tool-btn" data-tool="metadata">ⓘ <span data-i18n="metadata">Metadata</span></button>
+</div>
+<div class="sidebar-foot"><div class="tiny-pill">Offline-first</div><div class="tiny-note" data-i18n="workerNote">Heavy PDF work uses Web Workers.</div></div>
+</aside>
+<section class="content">
+<div id="toolPanel" class="tool-panel"></div>
+<div class="dropzone" id="dropzone">
+<div class="drop-icon">＋</div>
+<div class="drop-title" data-i18n="dropTitle">Drop PDF files here</div>
+<div class="drop-text" data-i18n="dropText">or choose files from this device</div>
+<button class="primary" id="chooseBtn" type="button" data-i18n="chooseFiles">Choose files</button>
+<input id="fileInput" type="file" accept="application/pdf" multiple hidden>
+</div>
+<section class="queue-card">
+<div class="section-head"><div><h2 data-i18n="batchQueue">Batch queue</h2><div class="muted" id="queueSummary">0 files</div></div><div class="head-actions"><button class="secondary" id="processAllBtn" type="button" data-i18n="process">Process</button><button class="secondary" id="downloadAllBtn" type="button" data-i18n="downloadAll">Download all</button></div></div>
+<div id="queue" class="queue"></div>
+</section>
+<section class="workspace">
+<div class="workspace-head"><div><h2 data-i18n="livePreview">Live preview</h2><div class="muted" id="activeFileName">No active PDF</div></div><div class="preview-actions"><button class="secondary" id="prevPageBtn" type="button">←</button><span id="pageIndicator">0 / 0</span><button class="secondary" id="nextPageBtn" type="button">→</button></div></div>
+<div class="preview-layout">
+<div class="thumbs" id="thumbs"></div>
+<div class="viewer-wrap"><canvas id="viewer"></canvas><div id="emptyViewer" class="empty-viewer"><div>PDF</div><span data-i18n="previewEmpty">Choose a PDF to preview its pages.</span></div></div>
+</div>
+</section>
+<div class="status" id="status"><span id="statusText" data-i18n="ready">Ready</span><div class="progress-track"><div id="progressBar"></div></div></div>
+</section>
+</main>
+<footer class="footer">Built with ❤️ by RA Fahim · <a href="https://rafahim.com" target="_blank" rel="noreferrer">rafahim.com</a> · © 2026 RA Fahim</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

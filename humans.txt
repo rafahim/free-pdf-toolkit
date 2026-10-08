@@ -1,0 +1,16 @@
+TEAM
+RA Fahim
+Web Developer & Creator
+Dhaka, Bangladesh
+https://rafahim.com
+https://github.com/rafahim
+https://twitter.com/rafahimn
+https://linkedin.com/in/rafahimn
+
+development
+Vanilla JavaScript
+HTML5
+CSS3
+pdf-lib
+PDF.js
+Web Workers

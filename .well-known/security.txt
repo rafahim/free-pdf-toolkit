@@ -1,0 +1,5 @@
+Contact: mailto:dev@rafahim.com
+Canonical: https://rafahim.com/.well-known/security.txt
+Policy: https://rafahim.com/security
+Preferred-Languages: en, bn
+Expires: 2027-10-09T00:00:00.000Z

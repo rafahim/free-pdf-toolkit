@@ -1,0 +1,11 @@
+{
+  "name":"Free PDF Toolkit — RA Fahim",
+  "short_name":"PDF Toolkit",
+  "start_url":"/pdf-toolkit/",
+  "scope":"/pdf-toolkit/",
+  "display":"standalone",
+  "background_color":"#0b1020",
+  "theme_color":"#4f46e5",
+  "description":"Private browser-only PDF tools with no uploads.",
+  "icons":[{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
